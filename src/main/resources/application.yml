@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+  mvc:
+    static-path-pattern: /static/**

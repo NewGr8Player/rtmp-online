@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>视频播放</title>
+    <!--<link href="//vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/7.3.0/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>-->
+    <link href="/static/videojs/video-js.css" rel="stylesheet">
+    <script src="/static/videojs/ie8/videojs-ie8.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+            videojs("my-video").ready(function () {
+                var myPlayer = this;
+                myPlayer.play();
+            });
+            videojs("my-video1").ready(function () {
+                var myPlayer = this;
+                myPlayer.play();
+            });
+        });
+    </script>
+</head>
+<body>
+<video id='my-video' class='video-js' controls preload='auto' width='640' height='264'
+       poster='/static/loading.jpg' data-setup='{}'>
+    <source src="rtmp://mobliestream.c3tv.com:554/live/goodtv.sdp" type="rtmp/flv"/>
+</video>
+
+<video id='my-video1' class='video-js' controls preload='auto' width='640' height='264'
+       poster='/static/loading.jpg' data-setup='{}'>
+    <source src="rtmp://live.chosun.gscdn.com/live/tvchosun1.stream" type="rtmp/flv"/>
+</video>
+<video id='my-video2' class='video-js' controls preload='auto' width='640' height='264'
+       poster='/static/loading.jpg' data-setup='{}'>
+    <source src="rtmp://58.200.131.2:1935/livetv/hunantv" type="rtmp/flv"/>
+</video>
+<script src="/static/videojs/video.js"></script>
+<script type="text/javascript">
+    videojs.options.flash.swf = "/static/videojs/video-js.swf";
+</script>
+</body>
+</html>
